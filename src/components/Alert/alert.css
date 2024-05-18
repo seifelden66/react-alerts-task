@@ -1,0 +1,18 @@
+.alert {
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gray);
+  padding: 30px 20px;
+  border-radius: 10px;
+  .alertItem {
+    gap: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .bord {
+    height: 35px;
+    border-left: .1px solid rgba(113, 113, 113, 0.461);
+  }
+}

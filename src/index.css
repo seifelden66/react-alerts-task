@@ -1,0 +1,16 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #292524;
+  --dark-gray:#0c0a09;
+  --accent-color: #53ACFF;
+  --orange: #D94111;
+  --green: #118F4B;
+  --font-heading: 'Poppins', sans-serif;
+  --font-filter: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-regular: 400;
+}
+

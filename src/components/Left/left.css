@@ -1,0 +1,48 @@
+.whiten {
+  color: white;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 18px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btm {
+  position: absolute;
+  bottom: 30px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.btmbtm {
+  margin-top: 20px;
+  font-weight: lighter;
+  color: rgba(204, 204, 205, 0.6);
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .hid {
+    display: none;
+  }
+  .logoImg {
+    display: flex;
+
+    width: 40px;
+
+  }
+}

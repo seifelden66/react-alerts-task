@@ -1,0 +1,55 @@
+.faqItem {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+  }
+  label{
+    font-size: small;
+  }
+  .toggle {
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .faqTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form-control {
+    margin-left: 30px;
+    font-weight: bold;
+    width: 80px;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  input[type="radio"] {
+    margin: 0;
+    mix-blend-mode: multiply;
+    font: inherit;
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: grid;
+    place-content: center;
+    color: black;
+  }
+  
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 100%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--accent-color);
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+  

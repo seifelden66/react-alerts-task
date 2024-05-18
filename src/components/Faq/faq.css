@@ -1,0 +1,62 @@
+/* src/FAQ.css */
+.faq {
+  text-align: start;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  h1 {
+    margin: 10px 0;
+  }
+}
+.title{
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #333;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.gridSection{
+  border-left: 1px solid var(--white);
+  margin-left: 15px;
+  display: grid;
+  gap: 10px;
+  padding: 10px 0px 5px 15px;
+  width: 100%;
+  .sectionItem{
+    display: flex;
+    
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+.dd{
+  display: flex;
+}
+/* radio buttons */
+#ad {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start; /* Align items to the start of the container */
+  align-items: center; /* Vertically center the items */
+}

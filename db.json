@@ -1,0 +1,70 @@
+{
+  "stocks": [
+    {
+      "ticker": "AMZN",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "ABQQ",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "High Risk"
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "PYPL",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "NFLX",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "ABQQ",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "High Risk"
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "PYPL",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "Low Risk"
+    },
+    {
+      "ticker": "NFLX",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "Low Risk"
+    }
+  ]
+}
