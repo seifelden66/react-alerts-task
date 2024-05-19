@@ -1,24 +1,68 @@
 // src/components/RightSide/RightSide.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import IndustryFaq from "../Faq/IndustryFaq";
 import Arrow from "../icons/Arrow";
 import { MultiInput } from "../MultiInput";
 import { Strategy } from "../Strategy/Strategy";
 import Search from "../icons/Search";
 import "./rightSide.css";
+import PropTypes from "prop-types";
 
-export const RightSide = ({ onFilterChange }) => {
-  const [marketCap, setMarketCap] = useState(null);
-  const [riskLevel, setRiskLevel] = useState(null);
+export const RightSide = ({
+  onFilterChange,
+  currentFilters,
+  onApplyFilters,
+  onSearch
+}) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const [localMarketCap, setLocalMarketCap] = useState(null);
+  const [localRiskLevel, setLocalRiskLevel] = useState(null);
+  const [localIndustries, setLocalIndustries] = useState([]);
+
+  useEffect(() => {
+    if (currentFilters) {
+      setLocalMarketCap(currentFilters.marketCap);
+      setLocalRiskLevel(currentFilters.riskLevel);
+      setLocalIndustries(currentFilters.industries);
+    }
+  }, [currentFilters]);
 
   const handleMarketCapChange = (event) => {
-    setMarketCap(event.target.value);
-    onFilterChange({ marketCap: event.target.value, riskLevel });
+    setLocalMarketCap(event.target.value);
   };
 
   const handleRiskLevelChange = (event) => {
-    setRiskLevel(event.target.value);
-    onFilterChange({ marketCap, riskLevel: event.target.value });
+    setLocalRiskLevel(event.target.value);
+  };
+
+  const handleIndustryChange = (selectedIndustries) => {
+    setLocalIndustries(selectedIndustries);
+  };
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    onSearch(e.target.value);
+  };
+
+  const handleApplyFilters = () => {
+    const filters = {
+      marketCap: localMarketCap,
+      riskLevel: localRiskLevel,
+      industries: localIndustries,
+    };
+    onFilterChange(filters);
+    onApplyFilters(filters);
+  };
+
+  const handleClearFilters = () => {
+    setLocalMarketCap(null);
+    setLocalRiskLevel(null);
+    setLocalIndustries([]);
+    onFilterChange({
+      marketCap: null,
+      riskLevel: null,
+      industries: [],
+    });
   };
 
   return (
@@ -26,15 +70,20 @@ export const RightSide = ({ onFilterChange }) => {
       <h3>Filters</h3>
       <div className="filtersTitle">
         <h5>Filters Applied</h5>
-        <p onClick={() => onFilterChange({ marketCap: null, riskLevel: null })}>
+        <p className="botn" onClick={handleClearFilters}>
           Clear All
         </p>
       </div>
-      <MultiInput />
+      <MultiInput onIndustryChange={handleIndustryChange} />
       <div className="stock cont">
         <h4 id="tit">Stock</h4>
         <div className="search">
-          <input placeholder="Search By..." />
+          <input
+          style={{color:"white"}}
+            placeholder="Search By..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
           <div className="searchIcon">
             <Search />
           </div>
@@ -56,9 +105,10 @@ export const RightSide = ({ onFilterChange }) => {
                     type="radio"
                     name="marketCap"
                     value="ABQQ"
+                    checked={localMarketCap === "ABQQ"}
                     onChange={handleMarketCapChange}
                   />
-                  <label htmlFor="marketCap">ABQQ </label>
+                  <label htmlFor="marketCap">ABQQ</label>
                 </div>
                 <div className="it">
                   <input
@@ -66,9 +116,10 @@ export const RightSide = ({ onFilterChange }) => {
                     type="radio"
                     name="marketCap"
                     value="TSLA"
+                    checked={localMarketCap === "TSLA"}
                     onChange={handleMarketCapChange}
                   />
-                  <label htmlFor="marketCap">TSLA </label>
+                  <label htmlFor="marketCap">TSLA</label>
                 </div>
                 <div className="it">
                   <input
@@ -76,9 +127,10 @@ export const RightSide = ({ onFilterChange }) => {
                     type="radio"
                     name="marketCap"
                     value="AMZN"
+                    checked={localMarketCap === "AMZN"}
                     onChange={handleMarketCapChange}
                   />
-                  <label htmlFor="marketCap">AMZN </label>
+                  <label htmlFor="marketCap">AMZN</label>
                 </div>
                 <div className="it">
                   <input
@@ -86,9 +138,10 @@ export const RightSide = ({ onFilterChange }) => {
                     type="radio"
                     name="marketCap"
                     value="PYPL"
+                    checked={localMarketCap === "PYPL"}
                     onChange={handleMarketCapChange}
                   />
-                  <label htmlFor="marketCap">PYPL </label>
+                  <label htmlFor="marketCap">PYPL</label>
                 </div>
               </div>
             </div>
@@ -108,6 +161,7 @@ export const RightSide = ({ onFilterChange }) => {
                     type="radio"
                     name="riskLevel"
                     value="low"
+                    checked={localRiskLevel === "low"}
                     onChange={handleRiskLevelChange}
                   />
                   <label htmlFor="riskLevel">Low</label>
@@ -119,6 +173,7 @@ export const RightSide = ({ onFilterChange }) => {
                     type="radio"
                     name="riskLevel"
                     value="high"
+                    checked={localRiskLevel === "high"}
                     onChange={handleRiskLevelChange}
                   />
                   <label htmlFor="riskLevel">High</label>
@@ -133,8 +188,19 @@ export const RightSide = ({ onFilterChange }) => {
         </div>
       </div>
       <div className="button">
-        <button>click me</button>
+        <button onClick={handleApplyFilters}>Apply</button>
       </div>
     </div>
   );
+};
+
+RightSide.propTypes = {
+  onFilterChange: PropTypes.func.isRequired,
+  currentFilters: PropTypes.shape({
+    marketCap: PropTypes.string,
+    riskLevel: PropTypes.string,
+    industries: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  onApplyFilters: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
 };

@@ -48,3 +48,18 @@
 .alert:hover .description {
   display: block;
 }
+
+@media screen and (max-width: 600px) {
+  .alert {
+    padding: 5px 10px; 
+  }
+  
+  .alertItem {
+    font-size: x-small; 
+    gap: 10px; 
+  }
+  
+  .bord {
+    height: 25px; 
+  }
+}

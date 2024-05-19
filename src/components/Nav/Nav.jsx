@@ -9,10 +9,16 @@ import PropTypes from "prop-types";
 export const Nav = ({ onSearch }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState({ marketCap: null, riskLevel: null, industries: [] });
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
     onSearch(e.target.value);
+  };
+
+  const handleApplyFilters = () => {
+    setFilters(filters);
+    setIsOpen(false);
   };
 
   return (
@@ -38,8 +44,12 @@ export const Nav = ({ onSearch }) => {
         </div>
       </div>
       <div className="filter">
-        <button className="btnFilter" onClick={() => setIsOpen(true)}> Filter</button>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+        <button className="btnFilter" onClick={() => setIsOpen(true)}>Filter</button>
+        <Modal 
+          open={isOpen} 
+          onClose={() => setIsOpen(false)} 
+          onApplyFilters={handleApplyFilters} 
+        />
       </div>
     </nav>
   );

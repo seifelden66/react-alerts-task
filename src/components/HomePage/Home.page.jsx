@@ -8,7 +8,7 @@ import "./home.css";
 
 export const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [filters, setFilters] = useState({ marketCap: null, riskLevel: null });
+  const [filters, setFilters] = useState({ marketCap: null, riskLevel: null, industries: [] });
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -28,7 +28,7 @@ export const HomePage = () => {
         <Alerts searchQuery={searchQuery} filters={filters} />
       </div>
       <div className="right">
-        <RightSide onFilterChange={handleFilterChange} />
+        <RightSide onFilterChange={handleFilterChange} onSearch={handleSearch}/>
       </div>
     </div>
   );

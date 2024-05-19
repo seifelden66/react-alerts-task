@@ -1,11 +1,17 @@
+// src/components/MultiInput.jsx
 import { useState } from "react";
-
 import Select from "react-select";
+import PropTypes from "prop-types";
+
 const options = [
-  { value: "Real satate", label: "Real satate" },
-  { value: "Investmen", label: "Investmen" },
-  { value: "Building", label: "Building" },
+  { value: "real estate", label: "Real Estate" },
+  { value: "industrial", label: "Industrial" },
+  { value: "it", label: "IT" },
+  { value: "health", label: "Health" },
+  { value: "materials", label: "Materials" },
+  { value: "energy", label: "Energy" },
 ];
+
 const customStyles = {
   control: (styles) => ({
     ...styles,
@@ -33,12 +39,15 @@ const customStyles = {
     },
   }),
 };
-export const MultiInput = () => {
+
+export const MultiInput = ({ onIndustryChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleChange = (selected) => {
     setSelectedOptions(selected);
+    onIndustryChange(selected.map(option => option.value));
   };
+
   return (
     <div className="main cont">
       <Select
@@ -52,4 +61,8 @@ export const MultiInput = () => {
       />
     </div>
   );
+};
+
+MultiInput.propTypes = {
+  onIndustryChange: PropTypes.func.isRequired,
 };

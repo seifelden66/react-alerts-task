@@ -16,7 +16,8 @@ const Alerts = ({ searchQuery, filters }) => {
     const matchesSearch = stock.ticker.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesRiskLevel = filters.riskLevel ? stock.riskLevel === filters.riskLevel : true;
     const matchesMarketCap = filters.marketCap ? stock.ticker === filters.marketCap : true;
-    return matchesSearch && matchesRiskLevel && matchesMarketCap;
+    const matchesIndustry = filters.industries.length > 0 ? filters.industries.includes(stock.industry.toLowerCase()) : true;
+    return matchesSearch && matchesRiskLevel && matchesMarketCap && matchesIndustry;
   });
 
   return (
@@ -33,6 +34,7 @@ Alerts.propTypes = {
   filters: PropTypes.shape({
     riskLevel: PropTypes.string,
     marketCap: PropTypes.string,
+    industries: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 
