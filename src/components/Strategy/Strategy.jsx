@@ -22,7 +22,7 @@ export const Strategy = () => {
 
   return (
     <div className="wrapper">
-      <h1>Strategy</h1>
+      <h4 >Strategy</h4>
       <div className="picker">
         <div className="scroll-wheel" ref={scrollWheelRef}>
           <ul>

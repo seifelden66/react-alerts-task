@@ -1,0 +1,81 @@
+{
+  "stocks": [
+    {
+      "ticker": "AMZN",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for AMZN Detailed and expanded dummy description for MSFTDetailed and expanded dummy description for MSFT"
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for TSLA Detailed and expanded dummy description for MSFTDetailed and expanded dummy description for MSFT"
+    },
+    {
+      "ticker": "ABQQ",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "high",
+      "description": "Detailed and expanded dummy description for ABQQ Detailed and expanded dummy description for MSFTDetailed and expanded dummy description for MSFT"
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for MSFT Detailed and expanded dummy description for MSFTDetailed and expanded dummy description for MSFT"
+    },
+    {
+      "ticker": "PYPL",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for PYPL Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    },
+    {
+      "ticker": "NFLX",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for NFLX Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for TSLA Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    },
+    {
+      "ticker": "ABQQ",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "high",
+      "description": "Detailed and expanded dummy description for ABQQ Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    },
+    {
+      "ticker": "MSFT",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for MSFT Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    },
+    {
+      "ticker": "PYPL",
+      "shares": 200,
+      "change": "+0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for PYPL Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    },
+    {
+      "ticker": "NFLX",
+      "shares": 200,
+      "change": "-0.25",
+      "riskLevel": "low",
+      "description": "Detailed and expanded dummy description for NFLX Detailed and expanded dummy description for PYPLDetailed and expanded dummy description for PYPL"
+    }
+  ]
+}

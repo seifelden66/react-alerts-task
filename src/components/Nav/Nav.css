@@ -27,18 +27,22 @@ nav {
   }
   .in {
     background: var(--gray);
+    color: white;
     width: 100%;
     height: 100%;
     border-radius: 3px;
     padding: 0 10px;
   }
 }
+.filter {
+  display: none;
+}
 .noti {
   position: relative;
   flex-grow: 1;
   text-align: end;
   color: var(--accent-color);
-  .bell{
+  .bell {
     font-size: xx-large;
   }
   .circle {
@@ -51,5 +55,17 @@ nav {
     color: var(--white);
     background: var(--green);
     z-index: 99;
+  }
+}
+@media (max-width: 992px) {
+  .search {
+    display: none !important;
+  }
+  .filter {
+    display: block;
+    .btnFilter{
+      cursor: pointer;
+      background: var(--accent-color);
+    }
   }
 }

@@ -3,9 +3,9 @@
   grid-template-columns:.3fr 3fr 1.5fr;
   .right{
     background: #000;
-    height: 92vh;
     margin: auto;
     border-radius: 10px;
+    margin: 10px;
   }
 }
 @media (max-width:992px) {

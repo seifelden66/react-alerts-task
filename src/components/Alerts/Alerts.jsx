@@ -1,33 +1,39 @@
-//Alerts/Alerts.jsx
-import { useQuery } from "@tanstack/react-query";
-import  Alert  from "../Alert/Alert";
-import "./alerts.css"
+// src/components/Alerts/Alerts.jsx
+import { useEffect, useState } from "react";
+import Alert from "../Alert/Alert";
+import stocksData from "../../db.json";
+import "./alerts.css";
+import PropTypes from "prop-types";
 
-const fetchStocks = async () => {
-  const response = await fetch("http://localhost:4000/stocks");
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-};
+const Alerts = ({ searchQuery, filters }) => {
+  const [stocks, setStocks] = useState([]);
 
-const Alerts = () => {
-  // Updated useQuery call to use the object form
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["stocks"],
-    queryFn: fetchStocks,
+  useEffect(() => {
+    setStocks(stocksData.stocks);
+  }, []);
+
+  const filteredStocks = stocks.filter((stock) => {
+    const matchesSearch = stock.ticker.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesRiskLevel = filters.riskLevel ? stock.riskLevel === filters.riskLevel : true;
+    const matchesMarketCap = filters.marketCap ? stock.ticker === filters.marketCap : true;
+    return matchesSearch && matchesRiskLevel && matchesMarketCap;
   });
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>An error has occurred: {error.message}</div>;
 
   return (
     <div className="cards">
-      {data?.map((stock) => (
-        <Alert key={stock.id} stock={stock} />
+      {filteredStocks.map((stock, index) => (
+        <Alert key={index} stock={stock} />
       ))}
     </div>
   );
+};
+
+Alerts.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+  filters: PropTypes.shape({
+    riskLevel: PropTypes.string,
+    marketCap: PropTypes.string,
+  }).isRequired,
 };
 
 export default Alerts;

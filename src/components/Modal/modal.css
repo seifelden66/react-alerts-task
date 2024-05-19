@@ -1,0 +1,16 @@
+.modal {
+  position: fixed;
+  top: 47%;
+  left: 50%;
+  height: 510px;
+  transform: translate(-50%, -50%);
+  background-color: var(--dark-gray);
+  z-index: 1000;
+}
+.close {
+  position: absolute;
+  background: inherit;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}

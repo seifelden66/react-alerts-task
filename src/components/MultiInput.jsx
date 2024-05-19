@@ -9,16 +9,16 @@ const options = [
 const customStyles = {
   control: (styles) => ({
     ...styles,
+    width: "100%",
+    height: 10,
     backgroundColor: "#292524",
-    paddingBottom:"10px",
-    border:"none",
-    width:'100%'
+    border: "none",
   }),
   option: (styles) => {
     return { ...styles, color: "#292524" };
   },
   multiValue: (provided) => {
-    return{ ...provided,        backgroundColor: "#007bff"}
+    return { ...provided, backgroundColor: "#007bff" };
   },
   multiValueLabel: (provided) => ({
     ...provided,

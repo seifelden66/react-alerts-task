@@ -1,8 +1,8 @@
 const Money = () => {
   return (
     <svg
-      width="27"
-      height="20"
+      width="23"
+      height="15"
       viewBox="0 0 27 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -18,30 +18,30 @@ export const Left = () => {
       <div className="items">
         <div className="item">
           <Alerts />
-          <h4 className="whiten hid">Alerts</h4>
+          <h5 className="whiten hid">Alerts</h5>
         </div>
         <div className="item">
           <Training />
-          <h4 className="whiten hid">Training</h4>
+          <h5 className="whiten hid">Training</h5>
         </div>
         <div className="item">
           <Automation />
-          <h4 className="hid">Automation</h4>
+          <h5 className="hid">Automation</h5>
         </div>
         <div className="item">
           <Portfolio />
-          <h4 className="hid">Portfolio</h4>
+          <h5 className="hid">Portfolio</h5>
         </div>
         <div className="item">
           <Trading />
-          <h4 className="hid">Trading</h4>
+          <h5 className="hid">Trading</h5>
         </div>
 
         <div className="btm">
           <div className="info">
             <Person />
             <div className="streamer-name hid">
-              <h4>Moni Roy</h4>
+              <h5>Moni Roy</h5>
               <p>Beginner</p>
             </div>
           </div>
